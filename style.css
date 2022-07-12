@@ -1,0 +1,227 @@
+*, *::after, *::before, button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono';
+    font-size: 16px;
+    color: black;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    background-color: bisque;
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0px auto;
+    padding: 1em;
+    position: relative;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    margin-bottom: 5em;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(104, 48, 48, .95);
+    padding: 1em;
+}
+
+
+header ul {
+    display: flex;
+    column-gap: 1.5em;
+    align-items: center;
+}
+
+header a, header button {
+    font-size: 1.2rem;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+}
+
+header a {
+    position: relative;
+}
+
+header button {
+    background: transparent;
+    border: none;
+}
+
+header a:hover::before, header button::before {
+    position: absolute;
+    content: "___";
+    font-size: 1rem;
+    letter-spacing: .4rem;
+    left: 0;
+    bottom: -0.3rem;
+}
+
+main {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .avarage-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2em;
+    row-gap: 2em;
+    margin-bottom: 3em;
+}
+
+main .avarage-items .item {
+    width: 30%;
+    max-width: 30em;
+    min-width: 10em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    padding: 1em;
+    border: .2rem dashed black;
+}
+
+main .avarage-items .item .item-color {
+    background-color: brown;
+    max-width: 100%;
+    height: 100%;
+}
+
+ .item-name {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+main .big-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2em;
+}
+
+main .big-items .item-big {
+    width: 100%;
+    padding: 1em;
+    border: .2rem dashed black;
+    display: flex;
+    column-gap: 1em;
+}
+
+main .big-items .item-big .item-color-big {
+    width: 40%;
+    min-width: 5em;
+    max-width: 15em;
+    background-color: rgb(118, 60, 60);
+}
+
+main .big-items .item-big .item-big-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.menu {
+    position: absolute;
+    display: none;
+}
+
+
+/*====== adaptive  ======*/
+
+@media screen and (max-width: 420px) {
+    header {
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(104, 48, 48, .95);
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+    }
+
+    
+
+    .menu {
+        display: block;
+        right: 1em;
+    }
+
+    .active {
+        z-index: 100;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
+        top: 0;
+        bottom: -100em;
+        right: 0;
+        left: 0;
+        padding: 1em;
+        align-items: center;
+        justify-content: start;
+        background-color: rgba(104, 48, 48, .95);
+    }
+
+
+
+    .unhide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        row-gap: 1em;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    header a, header button{
+        color: white;
+    }
+
+    header a:hover::before, header button::before {
+        color: inherit;
+    }
+
+    main {
+        margin-top: 3em;
+    }
+
+}
